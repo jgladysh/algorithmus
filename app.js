@@ -6,6 +6,7 @@ var bodyParser = require('body-parser');
 
 var heapSort = require('./routes/heapSort');
 var insertionSort = require('./routes/insertionSort');
+var mergeSort = require('./routes/mergeSort');
 
 var app = express();
 
@@ -16,12 +17,13 @@ app.set('view engine', 'html');
 
 app.use(logger('dev'));
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({extended: false}));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/heapSort', heapSort);
 app.use('/insertionSort', insertionSort);
+app.use('/mergeSort', mergeSort);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
