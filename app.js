@@ -7,6 +7,9 @@ var bodyParser = require('body-parser');
 var heapSort = require('./routes/heapSort');
 var insertionSort = require('./routes/insertionSort');
 var mergeSort = require('./routes/mergeSort');
+var radixSort = require('./routes/radixSort');
+var countingSort = require('./routes/countingSort');
+var twoSum = require('./routes/twoSum');
 
 var app = express();
 
@@ -24,6 +27,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/heapSort', heapSort);
 app.use('/insertionSort', insertionSort);
 app.use('/mergeSort', mergeSort);
+app.use('/radixSort', radixSort);
+app.use('/countingSort', countingSort);
+app.use('/twoSum', twoSum);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
