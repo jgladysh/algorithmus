@@ -1,8 +1,75 @@
-body {
-    padding: 50px;
-    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+body, html {
+    font: 14px serif;
+    height: 100%;
 }
 
 a {
     color: #00B7FF;
+}
+
+.header {
+    color: white;
+    height: 100px;
+    width: 100%;
+    background-color: rgb(42, 134, 109);
+    text-align: center;
+    font: bold 70px fantasy;
+    padding: 15px 0;
+    border-bottom: 5px solid white;
+}
+
+.wrapper {
+    height: 100%;
+    background-color: rgb(223, 238, 209);
+    width: 100%;
+    padding-top: 10px;
+}
+
+.block {
+    width: 20%;
+    float: left;
+    margin-left: 4%;
+    margin-bottom: 10px;
+    height: 200px;
+    background-color: green;
+    text-align: center;
+    line-height: 200px;
+    color: white;
+    font-size: 30px;
+}
+
+#arrayInput {
+    width: 80%;
+    height: 50px;
+    padding: 20px;
+    font-size: 30px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+#array {
+    width: 60%;
+    margin: 0 30px;
+    height: 25px;
+    font-size: 20px;
+}
+
+#send {
+    height: 30px;
+    font-size: 14px;
+}
+
+#chosenArray {
+    visibility: hidden;
+    font-size: 30px;
+    text-align: center;
+    margin: 30px 0 40px;
+}
+#dialogInput {
+    width: 100%;
+    margin-top: 20px;
+}
+
+#submitDialog{
+    margin-top: 20px;
 }

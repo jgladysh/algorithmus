@@ -5,5 +5,5 @@ var sorter = require('../public/javascripts/mergeSort');
 /* GET result page. */
 module.exports = router.get('/:array', function (req, res, next) {
     var sortedArray = sorter.mergeSort(JSON.parse(req.params.array));
-    res.render('index', {property: sortedArray});
+    res.send(sortedArray);
 });
