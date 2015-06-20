@@ -7,14 +7,18 @@ window.onload = function () {
         console.log('here');
         var target = event.target;
 
-        if (target.tagName != 'DIV') return;
-
-        if (target.id == 'twoSum') {
-            $("#dialog").dialog();
+        if (target.tagName != 'DIV') {
+            return;
+        }
+        else if ($('#arr').html() == '') {
+            formDialog('You need a basis for testing :)', 'At first enter the array')
+        }
+        else if (target.id == 'twoSum') {
+            formDialog('<form onsubmit="return getTwoSum()"><input type="text" id="dialogInput" required><button type="submit" id="submitDialog" onclick="getTwoSum()">Submit</button> </form>', 'Choose a number')
         }
         else {
             $.get('/' + target.id + '/[' + $('#arr').html() + ']', function (data) {
-                alert('sorted array is ' + data);
+                formDialog('sorted array is ' + data, 'Result');
             });
         }
     };
@@ -59,8 +63,19 @@ function getTwoSum() {
     }
     else {
         $.get('/twoSum/[' + $('#arr').html() + ']' + '/' + input, function (data) {
-            alert('Result is ' + data);
+            if (data == '') {
+                formDialog('No matching', 'Result')
+            }
+            else {
+                formDialog('Matched numbers: ' + data, 'Result')
+            }
         });
         return false;
     }
+}
+
+function formDialog(data, title) {
+    $("#dialog").html(data);
+    $("#dialog").dialog();
+    $("#dialog").dialog('option', 'title', title);
 }

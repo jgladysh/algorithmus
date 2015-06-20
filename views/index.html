@@ -16,7 +16,7 @@
                                                                                    onkeyup="checkArray()" required>
     <button type="submit" onclick="checkAndShow();" id="send">Submit</button>
 </form>
-<div id="chosenArray"><p>Array for testing is <b id='arr'></b>. Chose algorithm.</p></div>
+<div id="chosenArray"><p>Array for testing is [<b id='arr'></b>]. Chose algorithm.</p></div>
 <div id="wrapper">
     <div class='block' id="countingSort">Counting Sort</div>
     <div class='block' id="radixSort">Radix Sort</div>
@@ -27,11 +27,7 @@
     <div class='block'></div>
     <div class='block'></div>
 </div>
-<div id="dialog" title="Choose a number">
-    <form onsubmit="return getTwoSum()">
-        <input type="text" id="dialogInput" required>
-        <button type="submit" id="submitDialog" onclick="getTwoSum()">Submit</button>
-    </form>
+<div id="dialog" title="">
 </div>
 <h1><%= property %></h1>
 </body>
